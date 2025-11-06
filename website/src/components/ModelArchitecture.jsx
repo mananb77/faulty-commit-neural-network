@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FiLayers, FiZap, FiTrendingUp } from 'react-icons/fi';
 import { modelArchitectures } from '../data/modelSpecs';
 import CodeSnippet from './CodeSnippet';
+import ArchitectureDiagram from './ArchitectureDiagram';
 
 const ModelArchitecture = () => {
   const models = [modelArchitectures.singleLayerNN, modelArchitectures.improvedModel];
@@ -106,6 +107,23 @@ const ModelArchitecture = () => {
               </div>
             </div>
           </div>
+
+          {/* Architecture Visualization - Only for Multi-Layer Model */}
+          {/* Commented out - repetitive with layer list above */}
+          {/* {modelIndex === 1 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="glass-card p-8 mb-6"
+            >
+              <h4 className="text-xl font-bold text-dark-text mb-6 text-center">
+                Network Architecture Visualization
+              </h4>
+              <ArchitectureDiagram layers={model.architecture.layers} />
+            </motion.div>
+          )} */}
 
           {/* Training Configuration */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
